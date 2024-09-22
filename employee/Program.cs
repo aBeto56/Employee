@@ -67,6 +67,13 @@ class Program
         {
             Console.WriteLine($"Azonosító: {emp.Id}, Név: {emp.Name}, Kereset: {emp.Salary}");
         }
+        // 5. Azok neve és kora, akiknek 10 évük van a nyugdíjig
+        Console.WriteLine("\nAzok, akiknek 10 évük van a nyugdíjig:");
+        var nyugdij10 = employees.Where(e => 65 - e.Age <= 10 && e.Age < 65);
+        foreach (var emp in nyugdij10)
+        {
+            Console.WriteLine($"Név: {emp.Name}, Kor: {emp.Age}");
+        }
         Console.ReadKey();
     }
 }
