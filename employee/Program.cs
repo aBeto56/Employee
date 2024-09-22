@@ -53,6 +53,12 @@ class Program
                 Console.WriteLine($"Nem sikerült feldolgozni a sort: {line}. Hiba: {ex.Message}");
             }
         }
+        // 3. Az összes dolgozó nevének megjelenítése
+        Console.WriteLine("Összes dolgozó neve:");
+        foreach (var emp in employees)
+        {
+            Console.WriteLine(emp.Name);
+        }
         Console.ReadKey();
     }
 }
