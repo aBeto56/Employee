@@ -62,7 +62,7 @@ class Program
         // 4. Legjobban kereső dolgozó azonosítója és neve
         var maxSalary = employees.Max(e => e.Salary);
         var legjobbanKeresok = employees.Where(e => e.Salary == maxSalary);
-        Console.WriteLine("\nLegjobban kereső dolgozó(k):");
+        Console.WriteLine("\nLegjobban kereső dolgozó:");
         foreach (var emp in legjobbanKeresok)
         {
             Console.WriteLine($"Azonosító: {emp.Id}, Név: {emp.Name}, Kereset: {emp.Salary}");
@@ -74,6 +74,11 @@ class Program
         {
             Console.WriteLine($"Név: {emp.Name}, Kor: {emp.Age}");
         }
+        // 6. 50000 forint felett keresők
+        var sokatKeresok = employees.Count(e => e.Salary > 50000);
+        Console.WriteLine($"\nDolgozók száma, akik 50000 forintnál többet keresnek: {sokatKeresok}");
+
+
         Console.ReadKey();
     }
 }
